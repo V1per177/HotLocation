@@ -9,27 +9,27 @@ angular.module('myApp.home',['ngRoute','firebase'])
 	});
 }])
 
-.controller('HomeCtrl',['$scope','$firebaseSimplelogin', function($scope, $firebaseSimplelogin){
+.controller('HomeCtrl',['$scope','$firebaseAuth', function($scope, $firebaseAuth){
 
-	var firebaseObj= new Firebase("https://amber-torch-5013.firebaseio.com/");
-	var loginObj = $firebaseSimplelogin(firebaseObj);
+	var firebaseObj= new Firebase("https://amber-torch-5013.firebaseio.com");
+	var loginObj = $firebaseAuth(firebaseObj);
 
-	$scope.SignIn=function(event){
-		event.preventDefault(); // Preventing from refreshing
+	$scope.SignIn=function(e){
+		e.preventDefault(); // Preventing from refreshing
 		var username=$scope.user.email;
 		var password=$scope.user.password;
 
 		//Auth logic
 
-		loginObj.$login('password', {
+		loginObj.$authWithPassword({
 			email:username,
-			password: password
+			password:password
 		})
 		.then(function(user){
-			//Successful
+			//success login
 			console.log('Authentication successful');
-		}, function(error){
-			//Failure
+		},function(error){
+			//login failure
 			console.log('Authentication failure');
 		});
 	}
