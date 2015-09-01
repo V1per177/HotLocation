@@ -15,7 +15,7 @@ angular.module('myApp.home',['ngRoute','firebase'])
 	var loginObj = $firebaseAuth(firebaseObj);
 	$scope.user={};
 
-	$scope.SignIn=function(e){
+	$scope.SignIn = function(e){
 		e.preventDefault(); // Preventing from refreshing
 		var username = $scope.user.email;
 		var password = $scope.user.password;
