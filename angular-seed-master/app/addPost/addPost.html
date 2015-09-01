@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+	<title>Hot Location</title>
+
+	<!-- <link href="http://getbootstrap.com/examples/blog/blog.css" rel="stylesheet"> -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/slate/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+	<div class="blog-masthread">
+		<div class="container">
+			<!--Nav bar menu -->
+			<nav class="navbar navbar-default">
+				<ul class="nav navbar-nav">
+					<li><a href="#">Home</a></li>
+					<li class="active"><a href="addPost/addPost.html">Add Post</a></li>
+
+				</ul>
+			</nav>
+			
+
+		</div>
+	</div>
+
+	<div class="container">
+		<form class="form-horizontal">
+			<fieldset>
+				<!-- Form name -->
+				<legend>
+					Create Post
+				</legend>
+				<!-- Text input -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="txtTitle">
+						Title
+					</label>
+					<div class="col-md-4">
+						<input id="txtTitle" name="txtTitle" type="text" placeholder="placeholder" class="form-control input-md">
+					</div>
+				</div>
+
+				<!-- Text area -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="txtPost">Post</label>
+					<div class="col-md-4">
+						<textarea class="form-control" id="txtPost" name="txtPost">
+						</textarea>
+					</div>
+				</div>
+
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="singlebutton"></label>
+					<div class="col-md-4">
+						<input id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit" value="Publish"/>
+					</div>
+				</div>
+
+			</fieldset>
+	</form>
+
+</div>
+<!-- /.container -->
+<div class="blog-footer">
+	<p>Hot Location</p>
+</div>
+
+</body>
+</html>
