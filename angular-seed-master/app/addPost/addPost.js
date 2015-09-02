@@ -21,17 +21,19 @@ angular.module('myApp.addPost',['ngRoute'])
 		//Add Post logic
 
 		//Call pushAPI
-		firebaseObj.push({
+	firebaseObj.push({
 			title: title,
 			post: post,
 			emailId: CommonProp.getUser()
-		}).then(function(ref){
-			console.log(ref);
-			$location.path('/welcome');
-		}, function(error){
-			console.log("Error:", error);
+		}, function(ref){
+			if(ref == null){
+				$location.path('/welcome');
+			}else{
+				console.log('not null');
+			}
 		});
 	
 	}
+	
 
 }]);

@@ -19,7 +19,7 @@
 			<!--Nav bar menu -->
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="#/welcome">Home</a></li>
 					<li><a href="#/addPost">Add Post</a></li>
 
 				</ul>
@@ -38,7 +38,7 @@
 		<div class="list-group" ng-repeat="article in articles">
 			<a href="#" class="list-group-item active">
 				<h4 class="list-group-item-heading">{{article.title}}</h4>
-				<p class="list-group-item-text">Blog {{article.post}}</p>
+				<p class="list-group-item-text">{{article.post}}</p>
 			</a>
 		</div>
 
