@@ -8,7 +8,7 @@ angular.module('myApp.addPost',['ngRoute'])
 	});
 }])
 
-.controller('AddPostCtrl',['$scope','$firebase',function($scope,$firebase){
+.controller('AddPostCtrl',['$scope','$firebaseObject','$location','CommonProp',function($scope,$firebaseObject,$location,CommonProp){
 
 	$scope.AddPost=function(){
 	//get title and post
@@ -16,16 +16,18 @@ angular.module('myApp.addPost',['ngRoute'])
 	var post = $scope.article.post;
 
 	//Instantiate firebase object
-	var firebaseObj = new Firebase("https://amber-torch-5013.firebaseio.com");
-	var fb = $firebase(firebaseObj);
+	var firebaseObj = new Firebase("https://amber-torch-5013.firebaseio.com/Articles");
+	
 		//Add Post logic
 
 		//Call pushAPI
-		fb.$push({
+		firebaseObj.push({
 			title: title,
-			post: post
+			post: post,
+			emailId: CommonProp.getUser()
 		}).then(function(ref){
 			console.log(ref);
+			$location.path('/welcome');
 		}, function(error){
 			console.log("Error:", error);
 		});
