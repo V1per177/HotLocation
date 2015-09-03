@@ -1,4 +1,4 @@
-# angular-seed — the seed for AngularJS apps
+# Web App developed with AngularJS seed
 
 First of all, Thanks to AngularJS seed team!
 
