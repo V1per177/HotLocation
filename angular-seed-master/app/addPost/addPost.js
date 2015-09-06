@@ -28,6 +28,7 @@ angular.module('myApp.addPost',['ngRoute'])
 		}, function(ref){
 			if(ref == null){
 				$location.path('/welcome');
+				$scope.$apply(); //we need to refresh the scope. Otherwise location.path won't work
 			}else{
 				console.log('not null');
 			}
