@@ -8,6 +8,10 @@
     <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
    
     <link href="http://getbootstrap.com/examples/justified-nav/justified-nav.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://github.com/hakimel/Ladda/blob/master/dist/spin.min.js"></script>
+    <script type="text/javascript" src="https://github.com/hakimel/Ladda/blob/master/dist/ladda.min.js"></script>
+    <link href="https://github.com/hakimel/Ladda/blob/master/dist/ladda-themeless.min.css" rel="stylesheet">
     
   </head>
 
@@ -31,7 +35,7 @@
         <label class="checkbox">
           <a href="#/register"> Sign Up</a>
         </label>
-        <button ng-disabled="!user.email || !user.password" type="button" ng-click="SignIn($event)" class="btn btn-lg btn-primary btn-block">SignIn</button>
+        <button ladda-loading="login.loading" data-style="expand-right" ng-disabled="!user.email || !user.password" type="button" ng-click="SignIn($event)" class="btn btn-lg btn-primary btn-block"><span class="ladda-label">SignIn</span></button>
       </form>
 
     </div>
